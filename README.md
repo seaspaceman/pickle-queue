@@ -23,7 +23,7 @@ pip install -e .
 from pickle_queue import Queue, EmptyQueueError
 
 # Load queue, will create queue.pkl if it doesn't exist
-queue = Queue("my_queue.pkl")
+queue = Queue("queue.pkl")
 
 # Add items to the queue
 queue.put("Item 1")
