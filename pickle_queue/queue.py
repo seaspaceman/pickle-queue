@@ -27,9 +27,8 @@ class Queue:
         """Create an empty queue file if it doesn't exist."""
         if not self.queue_file.exists():
             with FileLock(self.lock_file):
-                if not self.queue_file.exists():
-                    with open(self.queue_file, 'wb') as file:
-                        pickle.dump([], file)
+                with open(self.queue_file, 'wb') as file:
+                    pickle.dump([], file)
 
     def put(self, item: Any, timeout: int = -1) -> None:
         """Add an item to the queue.
